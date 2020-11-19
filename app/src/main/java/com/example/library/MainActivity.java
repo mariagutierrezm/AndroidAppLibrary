@@ -2,7 +2,9 @@ package com.example.library;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +18,15 @@ public class MainActivity extends AppCompatActivity {
 
         initViews();
 
+        btnAllBooks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //java class, constructor(context-(activities are contexts), destination)
+                Intent intent = new Intent(MainActivity.this, AllBooksActivity.class);
+                //inner method that exists on all activities
+                startActivity(intent);
+            }
+        });
     }
 
     private void initViews() {
